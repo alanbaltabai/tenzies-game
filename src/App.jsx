@@ -48,7 +48,13 @@ export default function App() {
 		setTimerOn(true);
 		setCount((count) => count + 1);
 		setDice((prevDice) =>
-			prevDice.map((item) => (item.isHeld ? item : generateNewDie()))
+			prevDice.map((item) => {
+				if (item.isHeld) {
+					return item;
+				} else {
+					generateNewDie();
+				}
+			})
 		);
 	}
 

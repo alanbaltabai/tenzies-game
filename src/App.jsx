@@ -47,12 +47,17 @@ export default function App() {
 	function roll() {
 		setTimerOn(true);
 		setCount((count) => count + 1);
+
+		let die;
 		setDice((prevDice) =>
 			prevDice.map((item) => {
-				if (item.isHeld) {
-					return item;
-				} else {
-					generateNewDie();
+				if (item.isHeld) return item;
+				else {
+					while (true) {
+						die = generateNewDie();
+						if (die.value !== item.value) break;
+					}
+					return die;
 				}
 			})
 		);

@@ -24,6 +24,20 @@ body {
 
 	margin-block: 2em;
 	margin-inline: 5em;
+
+	position: relative;
+}
+
+.close-icon {
+	cursor: pointer;
+
+	position: absolute;
+	top: 2em;
+	right: 2em;
+
+	width: 2em;
+
+	height: 2em;
 }
 
 .aside {
@@ -129,7 +143,7 @@ body {
 	border: none;
 	border-radius: 0.4em;
 
-	box-shadow: 0 0 0.1em #5035ff;
+	box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.15);
 
 	display: block;
 

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Confetti from 'react-confetti';
 
 import Die from './components/Die';
+import closeIcon from './assets/close-icon.png';
 
 export default function App() {
 	function allNewDice() {
@@ -34,6 +35,13 @@ export default function App() {
 		setTenzies(true);
 		if (minCount === 0 || count < minCount) setMinCount(count);
 		if (bestTime === 0 || time < bestTime) setBestTime(time);
+	}
+
+	function close() {
+		setTimerOn(false);
+		setDice(allNewDice());
+		setCount(0);
+		setTime(0);
 	}
 
 	function roll() {
@@ -68,9 +76,6 @@ export default function App() {
 	const [minCount, setMinCount] = useState(0);
 	const [time, setTime] = useState(0);
 	const [bestTime, setBestTime] = useState(0);
-	const [bestTens, setBestTens] = useState('00');
-	const [bestSecs, setBestSecs] = useState('00');
-	const [bestMins, setBestMins] = useState('00');
 	const [timerOn, setTimerOn] = useState(false);
 
 	useEffect(() => {
@@ -96,6 +101,12 @@ export default function App() {
 
 	return (
 		<>
+			<img
+				className='close-icon'
+				onClick={close}
+				src={closeIcon}
+				alt='close icon'
+			/>
 			<aside className='aside'>
 				<section key={nanoid()} className='section'>
 					<h1 className='aside__title'>Rolls</h1>

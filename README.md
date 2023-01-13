@@ -1,8 +1,8 @@
-Tenzies game in React.
+Tenzies game in React. 
 
-Link: https://tenzies-alan.netlify.app
+Used tech: React functional components, useState and useEffect hooks, custom hook, React.Children.
 
-Stack: React
+Link: https://alanbaltabay-tenzies.netlify.app
 
 To run: <br>
 • <i> npm install </i> <br>

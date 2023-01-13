@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Confetti from 'react-confetti';
 
 import Die from './components/Die';
+import Aside from './components/Aside';
 import closeIcon from './assets/close-icon.png';
 
 export default function App() {
@@ -117,7 +118,7 @@ export default function App() {
 				src={closeIcon}
 				alt='close icon'
 			/>
-			<aside className='aside'>
+			<Aside>
 				<section key={crypto.randomUUID()} className='section'>
 					<h1 className='aside__title'>Rolls</h1>
 					<h2>{count}</h2>
@@ -127,7 +128,7 @@ export default function App() {
 					<h1 className='aside__title'>Best # of rolls</h1>
 					<h2>{minCount}</h2>
 				</section>
-			</aside>
+			</Aside>
 
 			<main className='main'>
 				<h1 className='title'>Tenzies</h1>
@@ -153,7 +154,7 @@ export default function App() {
 				{tenzies && <Confetti width='560' height='560' />}
 			</main>
 
-			<aside className='aside'>
+			<Aside>
 				<section key={crypto.randomUUID()} className='section '>
 					<h1 className='aside__title'>Time</h1>
 					<h2>
@@ -172,7 +173,7 @@ export default function App() {
 						<span>{('0' + ((bestTime / 10) % 100)).slice(-2)}</span>
 					</h2>
 				</section>
-			</aside>
+			</Aside>
 		</>
 	);
 }

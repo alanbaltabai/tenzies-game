@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import Confetti from 'react-confetti';
 
-import Die from './components/Die';
+import Main from './components/Main';
 import Aside from './components/Aside';
 import closeIcon from './assets/close-icon.png';
 
@@ -74,14 +73,6 @@ export default function App() {
 	}
 
 	const [dice, setDice] = useState(allNewDice());
-	const diceElements = dice.map((item) => (
-		<Die
-			key={item.id}
-			value={item.value}
-			isHeld={item.isHeld}
-			holdDice={() => holdDice(item.id)}
-		/>
-	));
 	const [tenzies, setTenzies] = useState(false);
 	const [count, setCount] = useState(0);
 	const [minCount, setMinCount] = useState(0);
@@ -130,29 +121,13 @@ export default function App() {
 				</section>
 			</Aside>
 
-			<main className='main'>
-				<h1 className='title'>Tenzies</h1>
-
-				<p className='instructions'>
-					{tenzies
-						? `You won!`
-						: `Click a die to hold its value. Roll until all dice are same.`}
-				</p>
-
-				<div className='dies'>{diceElements}</div>
-
-				{tenzies ? (
-					<button className='button' onClick={startNewGame}>
-						New Game
-					</button>
-				) : (
-					<button className='button' onClick={roll}>
-						Roll
-					</button>
-				)}
-
-				{tenzies && <Confetti width='560' height='560' />}
-			</main>
+			<Main
+				tenzies={tenzies}
+				dice={dice}
+				startNewGame={startNewGame}
+				holdDice={holdDice}
+				roll={roll}
+			/>
 
 			<Aside>
 				<section key={crypto.randomUUID()} className='section '>

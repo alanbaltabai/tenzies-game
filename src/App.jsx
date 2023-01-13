@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid';
 import { useState, useEffect } from 'react';
 import Confetti from 'react-confetti';
 
@@ -19,7 +18,7 @@ export default function App() {
 		return {
 			value: Math.floor(Math.random() * (6 - 1 + 1) + 1),
 			isHeld: false,
-			id: nanoid(),
+			id: crypto.randomUUID(),
 		};
 	}
 
@@ -119,12 +118,12 @@ export default function App() {
 				alt='close icon'
 			/>
 			<aside className='aside'>
-				<section key={nanoid()} className='section'>
+				<section key={crypto.randomUUID()} className='section'>
 					<h1 className='aside__title'>Rolls</h1>
 					<h2>{count}</h2>
 				</section>
 
-				<section key={nanoid()} className='section section2'>
+				<section key={crypto.randomUUID()} className='section section2'>
 					<h1 className='aside__title'>Best # of rolls</h1>
 					<h2>{minCount}</h2>
 				</section>
@@ -155,7 +154,7 @@ export default function App() {
 			</main>
 
 			<aside className='aside'>
-				<section key={nanoid()} className='section '>
+				<section key={crypto.randomUUID()} className='section '>
 					<h1 className='aside__title'>Time</h1>
 					<h2>
 						<span>{('0' + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
@@ -164,7 +163,7 @@ export default function App() {
 					</h2>
 				</section>
 
-				<section key={nanoid()} className='section section2'>
+				<section key={crypto.randomUUID()} className='section section2'>
 					<h1 className='aside__title'>Best time</h1>
 					<h2>
 						<span>{('0' + Math.floor((bestTime / 60000) % 60)).slice(-2)}</span>

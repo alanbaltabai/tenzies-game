@@ -59,13 +59,15 @@ export default function useCustom() {
 	}
 
 	function holdDice(id) {
-		setTimerOn(true);
+		if (!tenzies) {
+			setTimerOn(true);
 
-		setDice((prevDice) =>
-			prevDice.map((item) =>
-				item.id === id ? { ...item, isHeld: !item.isHeld } : item
-			)
-		);
+			setDice((prevDice) =>
+				prevDice.map((item) =>
+					item.id === id ? { ...item, isHeld: !item.isHeld } : item
+				)
+			);
+		}
 	}
 
 	const [dice, setDice] = useState(allNewDice());

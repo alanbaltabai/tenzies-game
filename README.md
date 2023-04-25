@@ -27,5 +27,6 @@ To run this project, install it locally using npm:
 
 ```
 $ git clone https://github.com/alanbaltabay/tenzies-game.git
+$ cd tenzies-game
 $ npm i && npm run dev
 ```

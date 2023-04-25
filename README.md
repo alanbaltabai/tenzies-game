@@ -23,10 +23,8 @@ Link to the website: <a href="https://alanbaltabay-mybuh-test-task.netlify.app">
 - React (useState and useEffect hooks, custom hook, React.Children)
 
 ## Setup
-To run this project, install it locally using npm:
+To run this project (after downloading and installing the packages):
 
 ```
-$ git clone https://github.com/alanbaltabay/tenzies-game.git
-$ cd tenzies-game
-$ npm i && npm run dev
+$ npm run dev
 ```
